@@ -36,6 +36,33 @@ The third statement identifies the regular route into an AI-dominated region. It
 
 We use two different notions of long-run behavior. An \emph{exact balanced growth path} has constant growth rates from date zero and constant ratios among variables that share a growth rate. A \emph{regular tail} need only approach such rates or ratios. Regularity assumptions are stated in each proposition; they are substantive and cannot be suppressed when the conclusion is a singularity.
 
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}L{0.13\textwidth}L{0.29\textwidth}L{0.25\textwidth}L{0.25\textwidth}@{}}
+\toprule
+Case & Regular asymptotic mechanism & Role of capital & Status of the result\\
+\midrule
+$\sigma_{XL}<1$ &
+Labor-anchored, with $X$ growing at $g_H$ &
+Binding bottleneck; $K_X/K,K_R/K\to0$ &
+Conditional characterization of an infinite-horizon equilibrium\\
+\addlinespace
+$\sigma_{XL}=1$ &
+Exact BGP if $\eta+\omega_X<1$ &
+Positive constant allocation shares &
+Constructed equilibrium under sufficient curvature\\
+\addlinespace
+$\sigma_{XL}>1$ &
+Regular AI-dominated branch is singular &
+Raises the level that capability amplifies; no asymptotic ceiling &
+Pre-singular necessary-condition branch; irregular paths remain open\\
+\bottomrule
+\end{tabular}
+\caption{The three substitution regimes}
+\label{tab:three-regimes}
+\end{table}
+
 \subsection{Gross complements: \texorpdfstring{$0<\sigma_{XL}<1$}{sigmaXL<1}}
 
 When effective labor and AI services are gross complements, the monopoly condition puts a lower bound on the AI share. As capability becomes abundant, the markup wedge converges to zero and the share approaches that bound. The limiting allocation is labor-anchored even though research remains autonomous.
@@ -100,6 +127,8 @@ while $RK_X/Y$ and $RK_R/Y$ converge to zero.
 \end{proposition}
 
 Proposition~\ref{prop:complements} is a characterization theorem, not an existence theorem for arbitrary $(K_0,B_0)$. Conditional on a regular nondegenerate infinite-horizon equilibrium, its limiting rates and shares are unique. The macroeconomy is asymptotically balanced in $(Y,K,C,X)$, but the allocation is not a full positive-share BGP: capability grows at rate $\eta g_H$, inference and research capital at rate $(1-\eta)g_H$, and their aggregate-capital shares vanish. Capital is therefore a genuine bottleneck in this regime.
+
+The nondegeneracy condition matters. Tails on which $K_R/K_X$ tends to zero or infinity need not satisfy the same capability and shadow-price growth formulas and are not ruled out by Proposition~\ref{prop:complements}.
 
 The denominator in~\eqref{eq:complements-KR-KX} is positive under $n,\gamma_A\geq0$ and $\rho>n$:
 \[
