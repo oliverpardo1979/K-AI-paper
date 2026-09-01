@@ -41,23 +41,24 @@ For $\sigma_{XL}>1$, the right-hand side is bounded on every interval $s\in(0,1-
 \subsection{The complementary regime}
 
 \begin{proof}[Proof of Proposition~\ref{prop:complements}]
-By regularity, $R/(Bp_X)\to0$. The monopoly condition therefore implies $1-\varepsilon\to0$. Since $\varepsilon(s)$ is affine and strictly decreasing when $\sigma_{XL}<1$, its unique unit root is $\bar s$ in~\eqref{eq:sbar}. The CES bridge then gives $X/H\to\bar x$, so $g_X\to g_H$.
+By regularity, $(r+\delta)/(Bp_X)\to0$. The monopoly condition therefore implies $1-\varepsilon\to0$. Since $\varepsilon(s)$ is affine and strictly decreasing when $\sigma_{XL}<1$, its unique unit root is $\bar s$ in~\eqref{eq:sbar}. The CES bridge then gives $X/H\to\bar x$, so $g_X\to g_H$.
 
 The inference rental share satisfies
 \[
  u=\theta s(1-\varepsilon)\longrightarrow0.
 \]
-Hence $K_X/Y=u/R\to0$. Since $K_R/K_X\to\kappa\in(0,\infty)$, $K_R/Y\to0$ as well. The capital market and $RK_Y/Y=\alpha$ now imply
+Hence $K_X/Y=u/(r+\delta)\to0$. Since $K_R/K_X\to\kappa\in(0,\infty)$, $K_R/Y\to0$ as well. The capital market and
+$(r+\delta)K_Y/Y=\alpha$ now imply
 \[
  \frac{K}{Y}
  =\frac{K_Y+K_X+K_R}{Y}
- \longrightarrow\frac{\alpha}{\bar R},
+ \longrightarrow\frac{\alpha}{\rho+\gamma_A+\delta},
  \qquad \frac{K_Y}{K}\to1.
 \]
 The assumed positive limits relative to $H$ give
 $g_Y=g_K=g_C\to g_H$. The household Euler equation gives
 $\bar r=\rho+g_H-n=\rho+\gamma_A$, and therefore
-$\bar R=\rho+\gamma_A+\delta$.
+$\bar r+\delta=\rho+\gamma_A+\delta$.
 
 Because $X=BK_X$,
 \[
@@ -82,11 +83,11 @@ Next, the research payment identity implies
 \[
  g_q+g_B=g_{K_R},
 \]
-because $R$, $\eta$, and the limiting $g_B$ are constant. Thus
+because $r+\delta$, $\eta$, and the limiting $g_B$ are constant. Thus
 $g_q=(1-2\eta)g_H$. Define
 \[
- T_t\equiv\frac{R_tX_t}{q_tB_t^2}
- =\frac{R_tK_{X,t}}{q_tB_t}.
+ T_t\equiv\frac{(r_t+\delta)X_t}{q_tB_t^2}
+ =\frac{(r_t+\delta)K_{X,t}}{q_tB_t}.
 \]
 The costate equation gives
 \[
@@ -94,7 +95,7 @@ The costate equation gives
  =\bar r-\eta^2g_H-(1-2\eta)g_H
  =\rho+\gamma_A-(1-\eta)^2g_H.
 \]
-Moreover, $RK_R=q\eta g_BB$ implies
+Moreover, $(r+\delta)K_R=q\eta g_BB$ implies
 \[
  \frac{K_R}{K_X}
  =\frac{\eta g_B}{T}
@@ -115,11 +116,12 @@ Aggregate feasibility yields
  \frac{C}{Y}
  =1-(g_K+\delta)\frac{K}{Y}
  \longrightarrow
- 1-\frac{\alpha(g_H+\delta)}{\bar R}.
+ 1-\frac{\alpha(g_H+\delta)}
+ {\rho+\gamma_A+\delta}.
 \]
 This is positive: $\rho>n$ implies
 \[
- \bar R-\alpha(g_H+\delta)
+ \rho+\gamma_A+\delta-\alpha(g_H+\delta)
  =\rho-\alpha n+(1-\alpha)(\gamma_A+\delta)>0.
 \]
 Finally,
@@ -166,16 +168,16 @@ this is equivalent to $\eta+\omega_X<1$.
 
 At unit elasticity, $s=\omega_X$ and
 $1-\varepsilon=\beta$. Thus
-$p_XX=\beta Y$ and $RK_X=\beta^2Y=uY$.
+$p_XX=\beta Y$ and $(r+\delta)K_X=\beta^2Y=uY$.
 The Euler equation gives $r=\rho+g-n$.
-Let $v=RK_R/Y$. The research payment identity gives
+Let $v=(r+\delta)K_R/Y$. The research payment identity gives
 \[
  \frac{qB}{Y}=\frac{v}{\eta g_B},
 \]
 and therefore $g_q=g-g_B$. The inference-saving term in the costate equation is
 \[
- \frac{RX}{qB^2}
- =\frac{RK_X}{qB}
+ \frac{(r+\delta)X}{qB^2}
+ =\frac{(r+\delta)K_X}{qB}
  =\frac{u\eta g_B}{v}.
 \]
 Substituting into~\eqref{eq:q-growth} gives
@@ -187,7 +189,8 @@ Using $r=\rho+g-n$ and $(1-\eta)g_B=\eta g$ yields
  v=\frac{u\eta g_B}{\rho-n+\eta g}.
 \]
 
-The capital market gives $K/Y=(\alpha+u+v)/R$, and feasibility gives~\eqref{eq:unit-c}. To verify positivity, note that
+The capital market gives
+$K/Y=(\alpha+u+v)/(r+\delta)$, and feasibility gives~\eqref{eq:unit-c}. To verify positivity, note that
 \[
  v
  <\frac{u\eta g_B}{\eta g}
@@ -201,7 +204,8 @@ $u=\beta^2$, it follows that
 \]
 Hence developer profit $\beta-u-v$ is positive. Also
 $\alpha+u+v<\alpha+\beta<1$, while
-$(g+\delta)/R<1$ because $R=\rho+g-n+\delta>g+\delta$.
+$(g+\delta)/(r+\delta)<1$ because
+$r+\delta=\rho+g-n+\delta>g+\delta$.
 Therefore $c>0$.
 
 It remains to construct levels. The payment shares require
@@ -265,13 +269,13 @@ Because $B$ is increasing and converges to $\bar B$, regularity implies
 $\dot B\to0$. Equation~\eqref{eq:B-law} then gives $K_R\to0$. Rearranging the research first-order condition,
 \[
  q
- =\frac{R(BK_R)^{1-\eta}}{\chi\eta B},
+ =\frac{(r+\delta)(BK_R)^{1-\eta}}{\chi\eta B},
 \]
-shows that $q\to0$, because $R$ is bounded and $B$ is bounded away from zero.
+shows that $q\to0$, because $r+\delta$ is bounded and $B$ is bounded away from zero.
 
 The regular interior static allocation has $K_X/H$ bounded away from zero. Hence $X=BK_X$ is bounded away from zero and grows with $H$. The forcing term
 \[
- f_t\equiv\frac{R_tX_t}{B_t^2}
+ f_t\equiv\frac{(r_t+\delta)X_t}{B_t^2}
 \]
 is therefore bounded away from zero. Meanwhile
 $(r_t-\eta g_{B,t})q_t\to0$. The costate equation consequently implies
@@ -318,8 +322,8 @@ Therefore
 
 The capital market and the three rental shares imply
 \begin{equation}
- \frac{R}{z}\longrightarrow a\equiv\alpha+u+v.
- \label{eq:app-Rz}
+ \frac{r+\delta}{z}\longrightarrow a\equiv\alpha+u+v.
+ \label{eq:app-usercost-z}
 \end{equation}
 Because $C/Y$ has a positive regular limit,
 $g_C\sim g_Y\sim(i+\theta h)z$. The Euler equation, divided by $z$, gives
@@ -334,8 +338,8 @@ Let $m=\lim qB/K$. The research payment identity gives
 \]
 The inference-saving term in the costate equation satisfies
 \[
- \frac{RX}{qB^2}
- =\frac{RK_X}{qB}
+ \frac{(r+\delta)X}{qB^2}
+ =\frac{(r+\delta)K_X}{qB}
  \sim\frac{u}{m}z.
 \]
 Because $m$ is regular, $g_q+g_B-g_K=o(z)$. Divide that identity and the costate equation by $z$:
@@ -348,7 +352,7 @@ Use~\eqref{eq:app-Euler-leading} and $m=v/(\eta h)$ to obtain
 \qquad
  v=\frac{\eta u}{d_\infty}.
 \]
-Equations~\eqref{eq:app-Rz} and~\eqref{eq:app-Euler-leading} now yield
+Equations~\eqref{eq:app-usercost-z} and~\eqref{eq:app-Euler-leading} now yield
 \[
  \alpha+u+\frac{\eta u}{d_\infty}
  =i\left(1+\frac{\theta\eta}{d_\infty}\right),
@@ -395,18 +399,19 @@ The final-production set is convex and the final production function is concave 
 
 Let $X^*(B;t)$ solve the pointwise inference problem and define
 \[
- \pi^I(B;t)=p_X(X^*;t)X^*-\frac{R_tX^*}{B}.
+ \pi^I(B;t)=p_X(X^*;t)X^*
+ -\frac{(r_t+\delta)X^*}{B}.
 \]
 The envelope theorem gives
 \[
- \pi^I_B=\frac{R_tX^*}{B^2}.
+ \pi^I_B=\frac{(r_t+\delta)X^*}{B^2}.
 \]
 Differentiating once more gives
 \[
  \pi^I_{BB}
- =\frac{R_t}{B^2}\frac{\partial X^*}{\partial B}
- -\frac{2R_tX^*}{B^3}
- =\frac{R_tX^*}{B^3}
+ =\frac{r_t+\delta}{B^2}\frac{\partial X^*}{\partial B}
+ -\frac{2(r_t+\delta)X^*}{B^3}
+ =\frac{(r_t+\delta)X^*}{B^3}
  \left(\frac{\partial\log X^*}{\partial\log B}-2\right),
 \]
 which proves~\eqref{eq:inference-curvature}.
@@ -430,9 +435,9 @@ In a regular infinite-horizon equilibrium with positive inference demand, the de
  q_t=\int_t^\infty
  \exp\left\{-\int_t^s
  [r_\tau-\eta g_{B,\tau}]\,\dd\tau\right\}
- \frac{R_sX_s}{B_s^2}\,\dd s>0.
+ \frac{(r_s+\delta)X_s}{B_s^2}\,\dd s>0.
 \]
 Because $0<\eta<1$, the marginal contribution of $K_R$ to
-$\dot B$ diverges as $K_R\downarrow0$. Thus a finite-date zero-research corner is unavailable when $q_t>0$ and $R_t<\infty$.
+$\dot B$ diverges as $K_R\downarrow0$. Thus a finite-date zero-research corner is unavailable when $q_t>0$ and $r_t+\delta<\infty$.
 
 This observation does not close the global analysis for $\sigma_{XL}>1$. The asymptotic propositions do not cover a failure of the costate integral to converge, oscillatory shares, repeated approaches to a boundary, a collapse of $BK_Y/H$, or paths whose scaled derivatives remain large even though the underlying ratios converge. These cases are excluded from the definition of a regular branch and require separate methods.

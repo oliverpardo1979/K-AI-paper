@@ -81,10 +81,10 @@ and the household transversality condition is
 
 \subsection{Final-good producers}
 
-At each date a competitive representative producer takes the gross capital rental $R_t$, the wage $w_t$, and the AI-service price $p_{X,t}$ as given. It solves
+At each date a competitive representative producer takes the net return $r_t$, the wage $w_t$, and the AI-service price $p_{X,t}$ as given. Because capital depreciates at rate $\delta$, its gross user cost is $r_t+\delta$. The producer solves
 \begin{equation}
  \max_{K_Y,L,X\geq0}
- \left\{F(K_Y,AL,X)-R_tK_Y-w_tL-p_{X,t}X\right\}.
+ \left\{F(K_Y,AL,X)-(r_t+\delta)K_Y-w_tL-p_{X,t}X\right\}.
  \label{eq:final-firm}
 \end{equation}
 Define the AI expenditure share inside the CES composite,
@@ -96,7 +96,7 @@ Define the AI expenditure share inside the CES composite,
 \end{equation}
 At an interior solution the first-order conditions are
 \begin{align}
- R_t&=\alpha\frac{Y_t}{K_{Y,t}},
+ r_t+\delta&=\alpha\frac{Y_t}{K_{Y,t}},
  \label{eq:firm-FOC-K}\\
  w_t&=(1-\alpha)(1-s_t)\frac{Y_t}{L_t},
  \label{eq:firm-FOC-L}\\
@@ -105,7 +105,7 @@ At an interior solution the first-order conditions are
 \end{align}
 Because the technology has constant returns in its rival inputs, profits are zero:
 \begin{equation}
- Y_t=R_tK_{Y,t}+w_tL_t+p_{X,t}X_t.
+ Y_t=(r_t+\delta)K_{Y,t}+w_tL_t+p_{X,t}X_t.
  \label{eq:final-zero-profit}
 \end{equation}
 
@@ -120,46 +120,50 @@ An interior monopoly solution requires $\varepsilon_t<1$.
 
 \subsection{The AI developer}
 
-The AI developer owns the non-rival stock $B_t$. It rents capital at the common gross rate $R_t$, uses $K_X=X/B$ to supply inference, and uses $K_R$ in research. Non-rivalry does not technologically require monopoly. It does, however, make competitive marginal-cost pricing of capability an incomplete financing mechanism: once created, an additional user does not deplete $B$. We use monopoly in the inference-service market to give the owner of $B$ a rent with which to value and finance research. Patent competition, public research, or a subsidy financed from general taxation would be alternative decentralizations.
+The AI developer owns the non-rival stock $B_t$. It rents capital at the common gross user cost $r_t+\delta$, uses $K_X=X/B$ to supply inference, and uses $K_R$ in research. Non-rivalry does not technologically require monopoly. It does, however, make competitive marginal-cost pricing of capability an incomplete financing mechanism: once created, an additional user does not deplete $B$. We use monopoly in the inference-service market to give the owner of $B$ a rent with which to value and finance research. Patent competition, public research, or a subsidy financed from general taxation would be alternative decentralizations.
 
 The developer competes in capital rental markets but acts as a Cournot supplier in the AI-service market: when choosing its dated service quantity, it takes $(K_Y,L)$ and the final producer's inverse demand $p_X(X;t)$ as given. It chooses $(X_t,K_{R,t})$ to maximize
 \begin{equation}
  \int_0^\infty
  \exp\!\left(-\int_0^t r_\tau\dd\tau\right)
- \left[p_{X,t}(X_t)X_t-R_t\frac{X_t}{B_t}-R_tK_{R,t}\right]\dd t
+ \left[p_{X,t}(X_t)X_t-(r_t+\delta)\frac{X_t}{B_t}
+ -(r_t+\delta)K_{R,t}\right]\dd t
  \label{eq:developer-objective}
 \end{equation}
 subject to~\eqref{eq:B-law} and $B_0>0$. The developer discounts at the household's net return because its equity is held by the household. Let $q_t$ be the current-value shadow price of capability in units of the final good. The current-value Hamiltonian is
 \begin{equation}
- \mathcal H_t^D=p_{X,t}(X_t)X_t-R_t\frac{X_t}{B_t}
- -R_tK_{R,t}+q_t\chi(B_tK_{R,t})^\eta.
+ \mathcal H_t^D=p_{X,t}(X_t)X_t
+ -(r_t+\delta)\frac{X_t}{B_t}
+ -(r_t+\delta)K_{R,t}+q_t\chi(B_tK_{R,t})^\eta.
  \label{eq:developer-Hamiltonian}
 \end{equation}
 At an interior optimum, inference satisfies the Lerner condition
 \begin{equation}
- p_{X,t}(1-\varepsilon_t)=\frac{R_t}{B_t},
+ p_{X,t}(1-\varepsilon_t)=\frac{r_t+\delta}{B_t},
  \label{eq:monopoly-FOC}
 \end{equation}
 and research satisfies
 \begin{equation}
- q_t\chi\eta B_t(B_tK_{R,t})^{\eta-1}=R_t.
+ q_t\chi\eta B_t(B_tK_{R,t})^{\eta-1}=r_t+\delta.
  \label{eq:research-FOC}
 \end{equation}
 Equivalently,
 \begin{equation}
- R_tK_{R,t}=q_t\eta\dot B_t.
+ (r_t+\delta)K_{R,t}=q_t\eta\dot B_t.
  \label{eq:research-payment}
 \end{equation}
-The envelope gain from capability is the saving in inference capital, $R_tX_t/B_t^2$. Hence the costate equation is
+The envelope gain from capability is the saving in inference capital,
+$(r_t+\delta)X_t/B_t^2$. Hence the costate equation is
 \begin{equation}
- \dot q_t=(r_t-\eta g_{B,t})q_t-\frac{R_tX_t}{B_t^2},
+ \dot q_t=(r_t-\eta g_{B,t})q_t
+ -\frac{(r_t+\delta)X_t}{B_t^2},
  \qquad g_{B,t}\equiv\frac{\dot B_t}{B_t},
  \label{eq:q-level}
 \end{equation}
 or, whenever $q_t>0$,
 \begin{equation}
  g_{q,t}=r_t-\eta g_{B,t}
- -\frac{R_tX_t}{q_tB_t^2}.
+ -\frac{(r_t+\delta)X_t}{q_tB_t^2}.
  \label{eq:q-growth}
 \end{equation}
 The developer's transversality condition is
@@ -170,17 +174,14 @@ The developer's transversality condition is
 \end{equation}
 Profit rebated to households is
 \begin{equation}
- \Pi_t=p_{X,t}X_t-R_t(K_{X,t}+K_{R,t}).
+ \Pi_t=p_{X,t}X_t-(r_t+\delta)(K_{X,t}+K_{R,t}).
  \label{eq:developer-profit}
 \end{equation}
 
 \subsection{Markets and feasibility}
 
-Capital mobility implies one gross rental rate,
-\begin{equation}
- R_t=r_t+\delta.
- \label{eq:R-r}
-\end{equation}
+Capital mobility implies that every use faces the same gross user cost,
+$r_t+\delta$.
 Labor, AI services, and capital clear when
 \begin{equation}
  L_t=N_t,\qquad X_t=B_tK_{X,t},\qquad
@@ -194,14 +195,16 @@ Combining household income, final-producer zero profit, developer profit, and ma
 \end{equation}
 Three payment identities will be useful:
 \begin{align}
- \frac{R_tK_{Y,t}}{Y_t}&=\alpha,
+ \frac{(r_t+\delta)K_{Y,t}}{Y_t}&=\alpha,
  \label{eq:payment-KY}\\
- \frac{R_tK_{X,t}}{Y_t}&=(1-\alpha)s_t(1-\varepsilon_t),
+ \frac{(r_t+\delta)K_{X,t}}{Y_t}
+ &=(1-\alpha)s_t(1-\varepsilon_t),
  \label{eq:payment-KX}\\
- \frac{R_tK_{R,t}}{Y_t}&=\frac{q_t\eta\dot B_t}{Y_t}.
+ \frac{(r_t+\delta)K_{R,t}}{Y_t}
+ &=\frac{q_t\eta\dot B_t}{Y_t}.
  \label{eq:payment-KR}
 \end{align}
-The second identity follows by multiplying~\eqref{eq:monopoly-FOC} by $X=BK_X$. It makes the accounting distinction transparent: final producers pay $p_XX$ for a service, while the developer pays $RK_X$ for the capital used to supply that service.
+The second identity follows by multiplying~\eqref{eq:monopoly-FOC} by $X=BK_X$. It makes the accounting distinction transparent: final producers pay $p_XX$ for a service, while the developer pays $(r+\delta)K_X$ for the capital used to supply that service.
 
 For $\sigma_{XL}\neq1$, the CES share gives the exact static bridge
 \begin{equation}
@@ -236,9 +239,9 @@ measurable allocation and control paths
 \]
 and price and income paths
 \[
- \{r_t,R_t,w_t,p_{X,t},\Pi_t\}_{t\geq0},
+ \{r_t,w_t,p_{X,t},\Pi_t\}_{t\geq0},
 \]
-such that: (i)~\eqref{eq:AN}, \eqref{eq:capital-allocation}--\eqref{eq:K-law-technology}, and the stated initial conditions hold; (ii) household choices satisfy \eqref{eq:HH-budget}, \eqref{eq:Euler}, and \eqref{eq:HH-TVC}; (iii) final producers satisfy \eqref{eq:Y}, \eqref{eq:CES} (or \eqref{eq:CD-composite}), \eqref{eq:s-share}, and \eqref{eq:firm-FOC-K}--\eqref{eq:final-zero-profit}; (iv) the developer satisfies \eqref{eq:B-law}, \eqref{eq:monopoly-FOC}, \eqref{eq:research-FOC}, \eqref{eq:q-level}, \eqref{eq:developer-TVC}, and \eqref{eq:developer-profit}; (v) prices and markets satisfy \eqref{eq:R-r} and \eqref{eq:market-clearing}; (vi) $I_t=Y_t-C_t$, equivalently \eqref{eq:resource-constraint} together with \eqref{eq:K-law-technology}; and (vii) quantities are nonnegative, $C_t,K_t,B_t,q_t>0$, and all objectives and present values are well defined.
+such that: (i)~\eqref{eq:AN}, \eqref{eq:capital-allocation}--\eqref{eq:K-law-technology}, and the stated initial conditions hold; (ii) household choices satisfy \eqref{eq:HH-budget}, \eqref{eq:Euler}, and \eqref{eq:HH-TVC}; (iii) final producers satisfy \eqref{eq:Y}, \eqref{eq:CES} (or \eqref{eq:CD-composite}), \eqref{eq:s-share}, and \eqref{eq:firm-FOC-K}--\eqref{eq:final-zero-profit}; (iv) the developer satisfies \eqref{eq:B-law}, \eqref{eq:monopoly-FOC}, \eqref{eq:research-FOC}, \eqref{eq:q-level}, \eqref{eq:developer-TVC}, and \eqref{eq:developer-profit}; (v) prices and markets satisfy \eqref{eq:market-clearing}; (vi) $I_t=Y_t-C_t$, equivalently \eqref{eq:resource-constraint} together with \eqref{eq:K-law-technology}; and (vii) quantities are nonnegative, $C_t,K_t,B_t,q_t>0$, and all objectives and present values are well defined.
 \end{definition}
 
 The definition is intentionally global. A solution of the first-order conditions on $[0,T)$, with $T<\infty$, is not an infinite-horizon equilibrium. Global optimality also requires more than local first-order conditions. Sufficient curvature restrictions and the status of singular branches are discussed below and in Appendix~\ref{app:curvature}.

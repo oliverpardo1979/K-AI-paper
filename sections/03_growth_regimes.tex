@@ -8,12 +8,12 @@ This section derives the asymptotic implications of $\sigma_{XL}<1$, $\sigma_{XL
 Write
 \begin{equation}
  \theta\equiv1-\alpha,\qquad
- u_t\equiv\frac{R_tK_{X,t}}{Y_t}
+ u_t\equiv\frac{(r_t+\delta)K_{X,t}}{Y_t}
  =\theta s_t(1-\varepsilon_t),\qquad
- v_t\equiv\frac{R_tK_{R,t}}{Y_t}.
+ v_t\equiv\frac{(r_t+\delta)K_{R,t}}{Y_t}.
  \label{eq:uv-definitions}
 \end{equation}
-The conventional-capital payment share is always $\alpha$. The two additional rental shares $u_t$ and $v_t$ measure the amount of the common capital stock absorbed by inference and research, valued at the same rental rate.
+The conventional-capital payment share is always $\alpha$. The two additional user-cost shares $u_t$ and $v_t$ measure the amount of the common capital stock absorbed by inference and research, valued at $r_t+\delta$.
 
 \begin{lemma}[Static allocation]
 \label{lem:static}
@@ -72,7 +72,7 @@ When effective labor and AI services are gross complements, the monopoly conditi
 Let $0<\sigma_{XL}<1$ and consider an infinite-horizon equilibrium with an interior, regular, nondegenerate tail satisfying:
 \begin{enumerate}
  \item $B_t\to\infty$;
- \item $Y_t/H_t$, $K_t/H_t$, $C_t/H_t$, $p_{X,t}$, and $R_t$ converge to finite strictly positive limits;
+ \item $Y_t/H_t$, $K_t/H_t$, $C_t/H_t$, $p_{X,t}$, and $r_t+\delta$ converge to finite strictly positive limits;
  \item $K_{R,t}/K_{X,t}\to\kappa\in(0,\infty)$ and the relevant growth rates converge.
 \end{enumerate}
 Then
@@ -94,15 +94,16 @@ Then
 \end{align}
 Moreover,
 \begin{align}
- \bar r&=\rho+\gamma_A,\qquad
- \bar R=\rho+\gamma_A+\delta,
+ \bar r&=\rho+\gamma_A,
  \label{eq:complements-prices}\\
  \frac{K_X}{K},\frac{K_R}{K}&\longrightarrow0,\qquad
  \frac{K_Y}{K}\longrightarrow1,\qquad
- \frac{K}{Y}\longrightarrow\frac{\alpha}{\bar R},
+ \frac{K}{Y}\longrightarrow
+ \frac{\alpha}{\rho+\gamma_A+\delta},
  \label{eq:complements-capital}\\
  \frac{C}{Y}&\longrightarrow
- 1-\frac{\alpha(g_H+\delta)}{\bar R}>0.
+ 1-\frac{\alpha(g_H+\delta)}
+ {\rho+\gamma_A+\delta}>0.
  \label{eq:complements-consumption}
 \end{align}
 The limiting rental-capital ratio is
@@ -123,7 +124,7 @@ Finally, factor payments converge to
  {1-\alpha\sigma_{XL}},
  \label{eq:complements-AI-share}
 \end{align}
-while $RK_X/Y$ and $RK_R/Y$ converge to zero.
+while $(r+\delta)K_X/Y$ and $(r+\delta)K_R/Y$ converge to zero.
 \end{proposition}
 
 Proposition~\ref{prop:complements} is a characterization theorem, not an existence theorem for arbitrary $(K_0,B_0)$. Conditional on a regular nondegenerate infinite-horizon equilibrium, its limiting rates and shares are unique. The macroeconomy is asymptotically balanced in $(Y,K,C,X)$, but the allocation is not a full positive-share BGP: capability grows at rate $\eta g_H$, inference and research capital at rate $(1-\eta)g_H$, and their aggregate-capital shares vanish. Capital is therefore a genuine bottleneck in this regime.
@@ -155,7 +156,7 @@ The production function becomes
 The AI share is $s=\omega_X$, the inverse-demand elasticity is
 $\varepsilon=1-\beta$, gross AI revenue is $\beta Y$, and inference uses the constant rental share
 \begin{equation}
- u\equiv\frac{RK_X}{Y}=\beta^2.
+ u\equiv\frac{(r+\delta)K_X}{Y}=\beta^2.
  \label{eq:unit-u}
 \end{equation}
 
@@ -181,23 +182,24 @@ Then there is an exact interior infinite-horizon equilibrium on a balanced growt
  &g_w&=g-n,\qquad g_{p_X}=-g_B.
  \label{eq:unit-other-growth}
 \end{align}
-Prices and rental shares are
+The net return and user-cost shares are
 \begin{align}
- r&=\rho+g-n,\qquad R=r+\delta,
- \label{eq:unit-rR}\\
- \frac{RK_Y}{Y}&=\alpha,\qquad
- \frac{RK_X}{Y}=u=\beta^2,\qquad
- \frac{RK_R}{Y}=v,
+ r&=\rho+g-n,
+ \label{eq:unit-r}\\
+ \frac{(r+\delta)K_Y}{Y}&=\alpha,\qquad
+ \frac{(r+\delta)K_X}{Y}=u=\beta^2,\qquad
+ \frac{(r+\delta)K_R}{Y}=v,
  \label{eq:unit-shares}\\
  v&=\frac{u\eta g_B}{\rho-n+\eta g}.
  \label{eq:unit-v}
 \end{align}
 Consequently,
 \begin{align}
- \frac{K}{Y}&=\frac{\alpha+u+v}{R},
+ \frac{K}{Y}&=\frac{\alpha+u+v}{r+\delta},
  \label{eq:unit-KYratio}\\
  c\equiv\frac{C}{Y}
- &=1-\frac{(g+\delta)(\alpha+u+v)}{R}>0,
+ &=1-\frac{(g+\delta)(\alpha+u+v)}
+ {r+\delta}>0,
  \label{eq:unit-c}\\
  \frac{\Pi}{Y}&=\beta-u-v>0.
  \label{eq:unit-profit}
@@ -207,9 +209,9 @@ The restrictions $\beta\leq1/2$ and $\eta\leq1/2$ make the developer's reduced H
 
 The qualification concerning initial levels is essential. Given parameters and $H_0=A_0N_0$, define
 \begin{equation}
- a_Y\equiv\frac{\alpha}{R},\qquad
- a_X\equiv\frac{u}{R},\qquad
- a_R\equiv\frac{v}{R},
+ a_Y\equiv\frac{\alpha}{r+\delta},\qquad
+ a_X\equiv\frac{u}{r+\delta},\qquad
+ a_R\equiv\frac{v}{r+\delta},
  \label{eq:unit-a}
 \end{equation}
 and
@@ -263,7 +265,7 @@ Gross substitutability removes the labor anchor. Two results delimit the regular
 
 \begin{definition}[Regular bounded-capability tail]
 \label{def:bounded-tail}
-A bounded-capability tail is regular if $B_t\to\bar B\in(0,\infty)$; $K/H$, $C/H$, and the interior static allocation ratios converge to strictly positive finite limits; $r$ and $R$ are bounded, with $R$ bounded away from zero; and the relevant growth rates converge.
+A bounded-capability tail is regular if $B_t\to\bar B\in(0,\infty)$; $K/H$, $C/H$, and the interior static allocation ratios converge to strictly positive finite limits; $r$ is bounded and $r+\delta$ is bounded away from zero; and the relevant growth rates converge.
 \end{definition}
 
 \begin{proposition}[A regular bounded-capability tail is impossible]
@@ -298,8 +300,8 @@ Then $s\to1$ and
 \begin{align}
  Y&\sim D B^\theta K,\qquad D\in(0,\infty),
  \label{eq:sub-production}\\
- u&\equiv\lim\frac{RK_X}{Y}=\theta^2,
- &v&\equiv\lim\frac{RK_R}{Y}
+ u&\equiv\lim\frac{(r+\delta)K_X}{Y}=\theta^2,
+ &v&\equiv\lim\frac{(r+\delta)K_R}{Y}
  =\frac{\eta u}{d_\infty},
  \label{eq:sub-uv}\\
  i&=\frac{d_\infty(\alpha+u)+\eta u}
@@ -310,7 +312,7 @@ Then $s\to1$ and
  &=\frac{\alpha\theta(1+\theta)}
  {d_\infty+\theta\eta}>0,
  \label{eq:sub-c}\\
- \lim\frac{R}{z}&=\alpha+u+v,
+ \lim\frac{r+\delta}{z}&=\alpha+u+v,
  &\lim\frac{qB}{K}&=\frac{v}{\eta h}.
  \label{eq:sub-price-q}
 \end{align}
@@ -351,12 +353,13 @@ The scaling calculation makes the source of increasing returns explicit. In the 
 Local first-order conditions are not automatically globally sufficient. Let
 \[
  \pi^I(B;t)\equiv
- \max_{X\geq0}\left\{p_X(X;t)X-\frac{R_tX}{B}\right\}.
+ \max_{X\geq0}
+ \left\{p_X(X;t)X-\frac{(r_t+\delta)X}{B}\right\}.
 \]
 Whenever the optimizer $X^*(B;t)$ is differentiable, the envelope theorem gives
 \begin{equation}
  \pi^I_{BB}(B;t)
- =\frac{R_tX^*}{B^3}
+ =\frac{(r_t+\delta)X^*}{B^3}
  \left(\frac{\partial\log X^*}{\partial\log B}-2\right).
  \label{eq:inference-curvature}
 \end{equation}
