@@ -1,0 +1,238 @@
+\section{Environment and equilibrium}
+\label{sec:model}
+
+\subsection{Technology and resources}
+
+Time is continuous. Population and labor-augmenting productivity are exogenous:
+\begin{equation}
+ \dot N_t=nN_t,\qquad \dot A_t=\gamma_A A_t,
+ \qquad N_0>0,\quad A_0>0.
+ \label{eq:AN}
+\end{equation}
+Write $H_t\equiv A_tN_t$ and $g_H\equiv n+\gamma_A$.
+
+There is one reproducible capital stock $K_t$. At each date it is allocated among conventional production, inference, and AI research:
+\begin{equation}
+ K_{Y,t}+K_{X,t}+K_{R,t}=K_t,qquad K_{j,t}\geq 0.
+ \label{eq:capital-allocation}
+\end{equation}
+The $K_j$ are dated allocations, not sector-specific state variables. Reallocation is instantaneous and all uses have the same depreciation rate $\delta\geq0$. This single constraint is what prevents double counting: a unit assigned to inference cannot simultaneously enter conventional production or research.
+
+AI capability $B_t$ turns the allocations $K_X$ and $K_R$ into two different services:
+\begin{equation}
+ X_t=B_tK_{X,t},qquad S_{R,t}=B_tK_{R,t}.
+ \label{eq:AI-services}
+\end{equation}
+Capability alone produces neither service. Autonomous research accumulates capability according to
+\begin{equation}
+ \dot B_t=\chi(B_tK_{R,t})^\eta,qquad
+ \chi>0,quad 0<\eta<1,quad B_0>0.
+ \label{eq:B-law}
+\end{equation}
+
+Competitive final producers use conventional capital and a CES composite of effective labor and AI services:
+\begin{align}
+ Y_t&=K_{Y,t}^{\alpha}Z_t^{1-\alpha},
+ &&0<\alpha<1, \label{eq:Y}\\
+ Z_t&=\left[\omega_LH_t^{\varrho}
+              +\omega_XX_t^{\varrho}\right]^{1/\varrho},
+ &&\omega_L,\omega_X>0,\quad
+ \varrho=\frac{\sigma_{XL}-1}{\sigma_{XL}}. \label{eq:CES}
+\end{align}
+For $\sigma_{XL}=1$, equation~\eqref{eq:CES} is understood as the Cobb--Douglas limit, with $\omega_L+\omega_X=1$:
+\begin{equation}
+ Z_t=H_t^{\omega_L}X_t^{\omega_X}.
+ \label{eq:CD-composite}
+\end{equation}
+For $\sigma_{XL}\neq1$, the weights are normalizations and need not sum to one. The final technology is constant returns in the rival inputs $(K_Y,H,X)$ holding $B$ fixed. Jointly in capability and inference capital, however, $X=BK_X$ introduces complementarity. Returns with respect to the pair $(B,K_X)$ therefore cannot be read from the CES aggregator alone.
+
+Gross investment $I_t$ changes the common stock:
+\begin{equation}
+ \dot K_t=I_t-\delta K_t,qquad K_0>0.
+ \label{eq:K-law-technology}
+\end{equation}
+The final good is the numeraire and may be consumed or invested.
+
+\subsection{Households}
+
+The representative dynasty owns aggregate capital and all equity in the AI developer. It supplies one unit of labor per person inelastically and chooses aggregate consumption $C_t>0$ and capital accumulation to maximize
+\begin{equation}
+ \int_0^\infty \e^{-\rho t}N_t
+ \log\!\left(\frac{C_t}{N_t}\right)\dd t,
+ \qquad \rho>n,
+ \label{eq:HH-objective}
+\end{equation}
+subject to
+\begin{equation}
+ \dot K_t=r_tK_t+w_tN_t+\Pi_t-C_t,qquad K_0>0.
+ \label{eq:HH-budget}
+\end{equation}
+Here $r_t$ is the net return on capital, $w_t$ the wage per worker, and $\Pi_t$ developer profit rebated to the household. The current-value Hamiltonian gives
+\begin{equation}
+ \frac{\dot C_t}{C_t}=n+r_t-\rho,
+ \label{eq:Euler}
+\end{equation}
+and the household transversality condition is
+\begin{equation}
+ \lim_{t\to\infty}\e^{-\rho t}\frac{N_tK_t}{C_t}=0.
+ \label{eq:HH-TVC}
+\end{equation}
+
+\subsection{Final-good producers}
+
+At each date a competitive representative producer takes the gross capital rental $R_t$, the wage $w_t$, and the AI-service price $p_{X,t}$ as given. It solves
+\begin{equation}
+ \max_{K_Y,L,X\geq0}
+ \left\{F(K_Y,AL,X)-R_tK_Y-w_tL-p_{X,t}X\right\}.
+ \label{eq:final-firm}
+\end{equation}
+Define the AI expenditure share inside the CES composite,
+\begin{equation}
+ s_t\equiv
+ \frac{\omega_XX_t^{\varrho}}
+      {\omega_L(A_tL_t)^{\varrho}+\omega_XX_t^{\varrho}}.
+ \label{eq:s-share}
+\end{equation}
+At an interior solution the first-order conditions are
+\begin{align}
+ R_t&=\alpha\frac{Y_t}{K_{Y,t}},
+ \label{eq:firm-FOC-K}\\
+ w_t&=(1-\alpha)(1-s_t)\frac{Y_t}{L_t},
+ \label{eq:firm-FOC-L}\\
+ p_{X,t}&=(1-\alpha)s_t\frac{Y_t}{X_t}.
+ \label{eq:firm-FOC-X}
+\end{align}
+Because the technology has constant returns in its rival inputs, profits are zero:
+\begin{equation}
+ Y_t=R_tK_{Y,t}+w_tL_t+p_{X,t}X_t.
+ \label{eq:final-zero-profit}
+\end{equation}
+
+The developer internalizes the inverse demand for its differentiated AI service. Holding $(K_Y,L)$ fixed, its absolute inverse-demand elasticity is
+\begin{equation}
+ \varepsilon_t
+ \equiv-\frac{\partial\log p_{X,t}}{\partial\log X_t}
+ =\frac{1-s_t}{\sigma_{XL}}+\alpha s_t.
+ \label{eq:inverse-demand-elasticity}
+\end{equation}
+An interior monopoly solution requires $\varepsilon_t<1$.
+
+\subsection{The AI developer}
+
+The AI developer owns the non-rival stock $B_t$. It rents capital at the common gross rate $R_t$, uses $K_X=X/B$ to supply inference, and uses $K_R$ in research. Given the final producer's inverse demand $p_X(X;t)$, it chooses $(X_t,K_{R,t})$ to maximize
+\begin{equation}
+ \int_0^\infty
+ \exp\!\left(-\int_0^t r_\tau\dd\tau\right)
+ \left[p_{X,t}(X_t)X_t-R_t\frac{X_t}{B_t}-R_tK_{R,t}\right]\dd t
+ \label{eq:developer-objective}
+\end{equation}
+subject to~\eqref{eq:B-law} and $B_0>0$. The developer discounts at the household's net return because its equity is held by the household. Let $q_t$ be the current-value shadow price of capability in units of the final good. The current-value Hamiltonian is
+\begin{equation}
+ \mathcal H_t^D=p_{X,t}(X_t)X_t-R_t\frac{X_t}{B_t}
+ -R_tK_{R,t}+q_t\chi(B_tK_{R,t})^\eta.
+ \label{eq:developer-Hamiltonian}
+\end{equation}
+At an interior optimum, inference satisfies the Lerner condition
+\begin{equation}
+ p_{X,t}(1-\varepsilon_t)=\frac{R_t}{B_t},
+ \label{eq:monopoly-FOC}
+\end{equation}
+and research satisfies
+\begin{equation}
+ q_t\chi\eta B_t(B_tK_{R,t})^{\eta-1}=R_t.
+ \label{eq:research-FOC}
+\end{equation}
+Equivalently,
+\begin{equation}
+ R_tK_{R,t}=q_t\eta\dot B_t.
+ \label{eq:research-payment}
+\end{equation}
+The envelope gain from capability is the saving in inference capital, $R_tX_t/B_t^2$. Hence the costate equation is
+\begin{equation}
+ \dot q_t=(r_t-\eta g_{B,t})q_t-\frac{R_tX_t}{B_t^2},
+ \qquad g_{B,t}\equiv\frac{\dot B_t}{B_t},
+ \label{eq:q-level}
+\end{equation}
+or, whenever $q_t>0$,
+\begin{equation}
+ g_{q,t}=r_t-\eta g_{B,t}
+ -\frac{R_tX_t}{q_tB_t^2}.
+ \label{eq:q-growth}
+\end{equation}
+The developer's transversality condition is
+\begin{equation}
+ \lim_{t\to\infty}
+ \exp\!\left(-\int_0^t r_\tau\dd\tau\right)q_tB_t=0.
+ \label{eq:developer-TVC}
+\end{equation}
+Profit rebated to households is
+\begin{equation}
+ \Pi_t=p_{X,t}X_t-R_t(K_{X,t}+K_{R,t}).
+ \label{eq:developer-profit}
+\end{equation}
+
+\subsection{Markets and feasibility}
+
+Capital mobility implies one gross rental rate,
+\begin{equation}
+ R_t=r_t+\delta.
+ \label{eq:R-r}
+\end{equation}
+Labor, AI services, and capital clear when
+\begin{equation}
+ L_t=N_t,qquad X_t=B_tK_{X,t},qquad
+ K_t=K_{Y,t}+K_{X,t}+K_{R,t}.
+ \label{eq:market-clearing}
+\end{equation}
+Combining household income, final-producer zero profit, developer profit, and market clearing yields aggregate feasibility:
+\begin{equation}
+ \dot K_t=Y_t-C_t-\delta K_t.
+ \label{eq:resource-constraint}
+\end{equation}
+Three payment identities will be useful:
+\begin{align}
+ \frac{R_tK_{Y,t}}{Y_t}&=\alpha,
+ \label{eq:payment-KY}\\
+ \frac{R_tK_{X,t}}{Y_t}&=(1-\alpha)s_t(1-\varepsilon_t),
+ \label{eq:payment-KX}\\
+ \frac{R_tK_{R,t}}{Y_t}&=\frac{q_t\eta\dot B_t}{Y_t}.
+ \label{eq:payment-KR}
+\end{align}
+The second identity follows by multiplying~\eqref{eq:monopoly-FOC} by $X=BK_X$. It makes the accounting distinction transparent: final producers pay $p_XX$ for a service, while the developer pays $RK_X$ for the capital used to supply that service.
+
+For $\sigma_{XL}\neq1$, the CES share gives the exact static bridge
+\begin{equation}
+ \frac{X_t}{H_t}
+ =\left(\frac{\omega_L}{\omega_X}
+ \frac{s_t}{1-s_t}\right)^{\frac{\sigma_{XL}}{\sigma_{XL}-1}}.
+ \label{eq:CES-bridge}
+\end{equation}
+Combining~\eqref{eq:payment-KY}, \eqref{eq:payment-KX}, and $X=BK_X$ gives
+\begin{equation}
+ B_t\frac{K_{Y,t}}{H_t}
+ \frac{1-\alpha}{\alpha}s_t(1-\varepsilon_t)
+ =\left(\frac{\omega_L}{\omega_X}
+ \frac{s_t}{1-s_t}\right)^{\frac{\sigma_{XL}}{\sigma_{XL}-1}}.
+ \label{eq:static-master}
+\end{equation}
+This equation is the main link between capability, capital allocation, and factor substitution.
+
+\subsection{Equilibrium}
+
+\begin{definition}[Infinite-horizon equilibrium]
+Given parameters and initial conditions $(K_0,B_0,N_0,A_0)>0$, an infinite-horizon equilibrium is a collection of locally absolutely continuous state and co-state paths
+\[
+ \{K_t,B_t,N_t,A_t,q_t\}_{t\geq0},
+\]
+measurable allocation and control paths
+\[
+ \{C_t,Y_t,Z_t,L_t,X_t,K_{Y,t},K_{X,t},K_{R,t},I_t,s_t\}_{t\geq0},
+\]
+and price and income paths
+\[
+ \{r_t,R_t,w_t,p_{X,t},\Pi_t\}_{t\geq0},
+\]
+such that: (i)~\eqref{eq:AN}, \eqref{eq:capital-allocation}--\eqref{eq:K-law-technology}, and the stated initial conditions hold; (ii) household choices satisfy \eqref{eq:HH-budget}, \eqref{eq:Euler}, and \eqref{eq:HH-TVC}; (iii) final producers satisfy \eqref{eq:Y}, \eqref{eq:CES} (or \eqref{eq:CD-composite}), \eqref{eq:s-share}, and \eqref{eq:firm-FOC-K}--\eqref{eq:final-zero-profit}; (iv) the developer satisfies \eqref{eq:B-law}, \eqref{eq:monopoly-FOC}, \eqref{eq:research-FOC}, \eqref{eq:q-level}, \eqref{eq:developer-TVC}, and \eqref{eq:developer-profit}; (v) prices and markets satisfy \eqref{eq:R-r} and \eqref{eq:market-clearing}; (vi) $I_t=Y_t-C_t$, equivalently \eqref{eq:resource-constraint} together with \eqref{eq:K-law-technology}; and (vii) quantities are nonnegative, $C_t,K_t,B_t,q_t>0$, and all objectives and present values are well defined.
+\end{definition}
+
+The definition is intentionally global. A solution of the first-order conditions on $[0,T)$, with $T<\infty$, is not an infinite-horizon equilibrium. Global optimality also requires more than local first-order conditions. Sufficient curvature restrictions and the status of singular branches are discussed below and in Appendix~\ref{app:curvature}.

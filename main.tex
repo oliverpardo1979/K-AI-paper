@@ -1,14 +1,47 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[11pt]{article}
 
-\title{K AI paper}
-\author{oliverpardo }
-\date{August 2026}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\R}{\mathcal R}
+\newcommand{\calE}{\mathcal E}
+
+\title{AI Capability with Allocable Capital:\\
+Balanced Growth and Finite-Time Singularity}
+\author{Oliver Pardo}
+\date{September 2026}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\begin{abstract}
+This paper studies an economy in which artificial-intelligence capability is non-rival but cannot be used without capital. A single reproducible capital stock can be reallocated instantaneously among conventional production, AI inference, and autonomous AI research. This formulation prevents the same machine from entering production twice while preserving a tight feedback loop from output to accumulation, from accumulation to research compute, and from research compute to AI capability. The elasticity of substitution between effective labor and AI services, $\sigma_{XL}$, separates three regimes. When $\sigma_{XL}<1$, a regular long-run equilibrium is labor-anchored: AI services grow with effective labor and the capital shares assigned to inference and research vanish. When $\sigma_{XL}=1$, an exact balanced growth path exists under a transparent subcriticality condition. When $\sigma_{XL}>1$, capital does not automatically regularize the economy. A regular bounded-capability tail is inconsistent with the developer's costate equation, while any regular AI-dominated branch with convergent expenditure shares reaches a finite-time singularity. The last result characterizes a pre-singular equilibrium branch; it is not, by itself, an infinite-horizon equilibrium or an exclusion of all irregular continuations.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_model}
+\input{sections/03_growth_regimes}
+\input{sections/04_conclusion}
+
+\appendix
+\input{sections/appendix}
+
+\bibliographystyle{apalike}
+\bibliography{references}
 
 \end{document}
