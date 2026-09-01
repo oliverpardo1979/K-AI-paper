@@ -3,4 +3,332 @@
 
 This section derives the asymptotic implications of $\sigma_{XL}<1$, $\sigma_{XL}=1$, and $\sigma_{XL}>1$. All statements distinguish an infinite-horizon equilibrium from a branch that exists only before a finite singular time.
 
-% Results and proofs added in the next theoretical milestone.
+\subsection{Preliminaries}
+
+Write
+\begin{equation}
+ \theta\equiv1-\alpha,\qquad
+ u_t\equiv\frac{R_tK_{X,t}}{Y_t}
+ =\theta s_t(1-\varepsilon_t),\qquad
+ v_t\equiv\frac{R_tK_{R,t}}{Y_t}.
+ \label{eq:uv-definitions}
+\end{equation}
+The conventional-capital payment share is always $\alpha$. The two additional rental shares $u_t$ and $v_t$ measure the amount of the common capital stock absorbed by inference and research, valued at the same rental rate.
+
+\begin{lemma}[Static allocation]
+\label{lem:static}
+At any interior date, equations~\eqref{eq:inverse-demand-elasticity}, \eqref{eq:monopoly-FOC}, and \eqref{eq:static-master} hold. In addition:
+\begin{enumerate}
+ \item if $0<\sigma_{XL}<1$, an interior monopoly allocation requires
+ \begin{equation}
+  s_t>\bar s\equiv
+  \frac{1-\sigma_{XL}}{1-\alpha\sigma_{XL}};
+  \label{eq:sbar}
+ \end{equation}
+ \item if $\sigma_{XL}>1$, then $\varepsilon_t<1$ for every $s_t\in[0,1]$;
+ \item if $\sigma_{XL}>1$ and
+ $B_tK_{Y,t}/H_t\to\infty$ along a sequence of interior dates, then
+ $s_t\to1$ along that sequence.
+\end{enumerate}
+\end{lemma}
+
+The third statement identifies the regular route into an AI-dominated region. It is not automatic if conventional capital per unit of effective labor collapses at least as fast as $1/B$. That exceptional scaling is one of the irregular possibilities left open below.
+
+We use two different notions of long-run behavior. An \emph{exact balanced growth path} has constant growth rates from date zero and constant ratios among variables that share a growth rate. A \emph{regular tail} need only approach such rates or ratios. Regularity assumptions are stated in each proposition; they are substantive and cannot be suppressed when the conclusion is a singularity.
+
+\subsection{Gross complements: \texorpdfstring{$0<\sigma_{XL}<1$}{sigmaXL<1}}
+
+When effective labor and AI services are gross complements, the monopoly condition puts a lower bound on the AI share. As capability becomes abundant, the markup wedge converges to zero and the share approaches that bound. The limiting allocation is labor-anchored even though research remains autonomous.
+
+\begin{proposition}[Labor-anchored regular tail]
+\label{prop:complements}
+Let $0<\sigma_{XL}<1$ and consider an infinite-horizon equilibrium with an interior, regular, nondegenerate tail satisfying:
+\begin{enumerate}
+ \item $B_t\to\infty$;
+ \item $Y_t/H_t$, $K_t/H_t$, $C_t/H_t$, $p_{X,t}$, and $R_t$ converge to finite strictly positive limits;
+ \item $K_{R,t}/K_{X,t}\to\kappa\in(0,\infty)$ and the relevant growth rates converge.
+\end{enumerate}
+Then
+\begin{align}
+ s_t&\longrightarrow
+ \bar s=\frac{1-\sigma_{XL}}{1-\alpha\sigma_{XL}},
+ &\frac{X_t}{H_t}&\longrightarrow
+ \bar x\equiv
+ \left(\frac{\omega_L}{\omega_X}
+ \frac{\bar s}{1-\bar s}\right)^{
+ \frac{\sigma_{XL}}{\sigma_{XL}-1}},
+ \label{eq:complements-sx}\\
+ g_Y=g_K=g_C=g_X&\longrightarrow g_H,
+ &g_B&\longrightarrow\eta g_H,
+ \label{eq:complements-growth1}\\
+ g_{K_X}=g_{K_R}&\longrightarrow(1-\eta)g_H,
+ &g_q&\longrightarrow(1-2\eta)g_H.
+ \label{eq:complements-growth2}
+\end{align}
+Moreover,
+\begin{align}
+ \bar r&=\rho+\gamma_A,\qquad
+ \bar R=\rho+\gamma_A+\delta,
+ \label{eq:complements-prices}\\
+ \frac{K_X}{K},\frac{K_R}{K}&\longrightarrow0,\qquad
+ \frac{K_Y}{K}\longrightarrow1,\qquad
+ \frac{K}{Y}\longrightarrow\frac{\alpha}{\bar R},
+ \label{eq:complements-capital}\\
+ \frac{C}{Y}&\longrightarrow
+ 1-\frac{\alpha(g_H+\delta)}{\bar R}>0.
+ \label{eq:complements-consumption}
+\end{align}
+The limiting rental-capital ratio is
+\begin{equation}
+ \frac{K_R}{K_X}\longrightarrow
+ \frac{\eta^2g_H}
+ {\rho+\gamma_A-(1-\eta)^2g_H}.
+ \label{eq:complements-KR-KX}
+\end{equation}
+Finally, factor payments converge to
+\begin{align}
+ \frac{wN}{Y}&\longrightarrow
+ \frac{\sigma_{XL}(1-\alpha)^2}
+ {1-\alpha\sigma_{XL}},
+ \label{eq:complements-labor-share}\\
+ \frac{p_XX}{Y}&\longrightarrow
+ \frac{(1-\alpha)(1-\sigma_{XL})}
+ {1-\alpha\sigma_{XL}},
+ \label{eq:complements-AI-share}
+\end{align}
+while $RK_X/Y$ and $RK_R/Y$ converge to zero.
+\end{proposition}
+
+Proposition~\ref{prop:complements} is a characterization theorem, not an existence theorem for arbitrary $(K_0,B_0)$. Conditional on a regular nondegenerate infinite-horizon equilibrium, its limiting rates and shares are unique. The macroeconomy is asymptotically balanced in $(Y,K,C,X)$, but the allocation is not a full positive-share BGP: capability grows at rate $\eta g_H$, inference and research capital at rate $(1-\eta)g_H$, and their aggregate-capital shares vanish. Capital is therefore a genuine bottleneck in this regime.
+
+The denominator in~\eqref{eq:complements-KR-KX} is positive under $n,\gamma_A\geq0$ and $\rho>n$:
+\[
+ \rho+\gamma_A-(1-\eta)^2(n+\gamma_A)>0.
+\]
+Depreciation affects the level of $K/Y$ and consumption, but not the limiting growth rate of capability.
+
+\subsection{Unit elasticity: \texorpdfstring{$\sigma_{XL}=1$}{sigmaXL=1}}
+
+Set $\omega_L+\omega_X=1$ and define
+\begin{equation}
+ \lambda\equiv\theta\omega_L,\qquad
+ \beta\equiv\theta\omega_X,\qquad
+ \Delta\equiv\lambda(1-\eta)-\beta\eta
+ =\theta(1-\eta-\omega_X).
+ \label{eq:unit-definitions}
+\end{equation}
+The production function becomes
+\begin{equation}
+ Y=K_Y^\alpha H^\lambda(BK_X)^\beta,
+ \qquad \alpha+\lambda+\beta=1.
+ \label{eq:unit-production}
+\end{equation}
+The AI share is $s=\omega_X$, the inverse-demand elasticity is
+$\varepsilon=1-\beta$, gross AI revenue is $\beta Y$, and inference uses the constant rental share
+\begin{equation}
+ u\equiv\frac{RK_X}{Y}=\beta^2.
+ \label{eq:unit-u}
+\end{equation}
+
+\begin{proposition}[Exact equilibrium BGP at unit elasticity]
+\label{prop:unit-BGP}
+Suppose $g_H>0$, $\rho>n$, $\beta\leq1/2$, $\eta\leq1/2$, and
+\begin{equation}
+ \Delta>0
+ \quad\Longleftrightarrow\quad
+ \eta+\omega_X<1.
+ \label{eq:unit-subcritical}
+\end{equation}
+Then there is an exact interior infinite-horizon equilibrium on a balanced growth path for the initial levels constructed below. Its growth rates are
+\begin{align}
+ g_Y=g_K=g_C=g_{K_Y}=g_{K_X}=g_{K_R}
+ &\equiv g
+ =\frac{\lambda(1-\eta)}{\Delta}g_H,
+ \label{eq:unit-g}\\
+ g_B&=\frac{\eta}{1-\eta}g,
+ &g_X&=g+g_B,
+ \label{eq:unit-gB-X}\\
+ g_q&=g-g_B,
+ &g_w&=g-n,\qquad g_{p_X}=-g_B.
+ \label{eq:unit-other-growth}
+\end{align}
+Prices and rental shares are
+\begin{align}
+ r&=\rho+g-n,\qquad R=r+\delta,
+ \label{eq:unit-rR}\\
+ \frac{RK_Y}{Y}&=\alpha,\qquad
+ \frac{RK_X}{Y}=u=\beta^2,\qquad
+ \frac{RK_R}{Y}=v,
+ \label{eq:unit-shares}\\
+ v&=\frac{u\eta g_B}{\rho-n+\eta g}.
+ \label{eq:unit-v}
+\end{align}
+Consequently,
+\begin{align}
+ \frac{K}{Y}&=\frac{\alpha+u+v}{R},
+ \label{eq:unit-KYratio}\\
+ c\equiv\frac{C}{Y}
+ &=1-\frac{(g+\delta)(\alpha+u+v)}{R}>0,
+ \label{eq:unit-c}\\
+ \frac{\Pi}{Y}&=\beta-u-v>0.
+ \label{eq:unit-profit}
+\end{align}
+The restrictions $\beta\leq1/2$ and $\eta\leq1/2$ make the developer's reduced Hamiltonian concave, so its first-order conditions and transversality condition are sufficient for global optimality. Without those two restrictions, the same formulas construct a path satisfying all decentralized first-order conditions, market conditions, and transversality conditions, but the argument does not establish the developer's global optimum.
+\end{proposition}
+
+The qualification concerning initial levels is essential. Given parameters and $H_0=A_0N_0$, define
+\begin{equation}
+ a_Y\equiv\frac{\alpha}{R},\qquad
+ a_X\equiv\frac{u}{R},\qquad
+ a_R\equiv\frac{v}{R},
+ \label{eq:unit-a}
+\end{equation}
+and
+\begin{equation}
+ P\equiv a_Y^{\alpha/\lambda}a_X^{\beta/\lambda},
+ \qquad
+ Q\equiv\frac{(g_B/\chi)^{1/\eta}}{a_R},
+ \qquad
+ d\equiv\frac{1-\eta}{\eta}-\frac{\beta}{\lambda}
+ =\frac{\Delta}{\eta\lambda}>0.
+ \label{eq:unit-level-constants}
+\end{equation}
+The exact BGP starts from
+\begin{align}
+ B_0&=\left(\frac{PH_0}{Q}\right)^{1/d},
+ &Y_0&=PH_0B_0^{\beta/\lambda},
+ \label{eq:unit-B0Y0}\\
+ K_{j,0}&=a_jY_0\quad(j=Y,X,R),
+ &K_0&=(a_Y+a_X+a_R)Y_0,
+ \label{eq:unit-K0}\\
+ C_0&=cY_0,
+ &q_0&=\frac{vY_0}{\eta g_BB_0}.
+ \label{eq:unit-C0q0}
+\end{align}
+Thus a generic pair $(K_0,B_0)$ does not lie exactly on the BGP. Proposition~\ref{prop:unit-BGP} establishes existence, not global convergence from arbitrary initial conditions.
+
+\begin{corollary}[No finite-rate BGP at or above the unit-elasticity threshold]
+\label{cor:unit-no-BGP}
+If $\Delta\leq0$ and $g_H>0$, there is no interior exact BGP with positive finite $g$ and $g_B$ satisfying~\eqref{eq:unit-production} and~\eqref{eq:B-law}.
+\end{corollary}
+
+This corollary does not say that growth stops. In a regular high-growth reduction, the endogenous growth rates obey, to first order,
+\begin{equation}
+ \begin{pmatrix}
+  \dot g_B/g_B\\[2pt]
+  \dot g_K/g_K
+ \end{pmatrix}
+ \simeq
+ \begin{pmatrix}
+  \eta-1&\eta\\
+  \beta&-\lambda
+ \end{pmatrix}
+ \begin{pmatrix}g_B\\ g_K\end{pmatrix}.
+ \label{eq:unit-feedback-matrix}
+\end{equation}
+The determinant is $\Delta$. When $\Delta<0$, the reduced system has a positive eigenvalue and therefore an explosive direction. At $\Delta=0$, the leading system is critical and lower-order terms decide whether acceleration is merely unbalanced or becomes singular. These are asymptotic diagnostics, not substitutes for a global equilibrium construction.
+
+\subsection{Gross substitutes: \texorpdfstring{$\sigma_{XL}>1$}{sigmaXL>1}}
+
+Gross substitutability removes the labor anchor. Two results delimit the regular possibilities. First, capability cannot settle at a finite level along a conventional regular tail. Second, if capability becomes dominant and scaled shares converge, the resulting branch reaches a finite-time singularity.
+
+\begin{definition}[Regular bounded-capability tail]
+\label{def:bounded-tail}
+A bounded-capability tail is regular if $B_t\to\bar B\in(0,\infty)$; $K/H$, $C/H$, and the interior static allocation ratios converge to strictly positive finite limits; $r$ and $R$ are bounded, with $R$ bounded away from zero; and the relevant growth rates converge.
+\end{definition}
+
+\begin{proposition}[A regular bounded-capability tail is impossible]
+\label{prop:no-bounded-B}
+Let $\sigma_{XL}>1$. No infinite-horizon interior equilibrium admits a regular bounded-capability tail in the sense of Definition~\ref{def:bounded-tail}.
+\end{proposition}
+
+The economic force is the developer's shadow value. If $B$ converged, autonomous research would require $K_R\to0$, and the research first-order condition would imply $q\to0$. Yet a regular economy would continue to use a growing quantity of inference. The costate equation would then contain a strictly negative flow gain from saving inference capital, preventing $q$ from approaching zero from above.
+
+\begin{definition}[Regular AI-dominated branch]
+\label{def:AI-branch}
+An interior solution of the decentralized first-order and market conditions on $[t_0,T)$ is a regular AI-dominated branch if $B\to\infty$, $BK_Y/H\to\infty$, and
+\[
+ \frac{K_Y}{K},\quad\frac{K_X}{K},\quad\frac{K_R}{K},
+ \quad\frac{C}{Y},\quad
+ \frac{g_B}{Y/K},\quad\frac{qB}{K}
+\]
+converge to finite strictly positive limits as $t\uparrow T$, except that $T$ is not assumed to be infinite. Regularity also requires the logarithmic derivatives of these convergent ratios to be $o(Y/K)$.
+\end{definition}
+
+\begin{proposition}[Finite-time singularity on a regular AI-dominated branch]
+\label{prop:substitute-singularity}
+Let $\sigma_{XL}>1$ and suppose a regular AI-dominated branch exists. Define
+\begin{equation}
+ z\equiv\frac{Y}{K},\qquad
+ h\equiv\lim\frac{g_B}{z},\qquad
+ i\equiv\lim\frac{Y-C}{Y},\qquad
+ d_\infty\equiv1+\theta-\eta.
+ \label{eq:sub-definitions}
+\end{equation}
+Then $s\to1$ and
+\begin{align}
+ Y&\sim D B^\theta K,\qquad D\in(0,\infty),
+ \label{eq:sub-production}\\
+ u&\equiv\lim\frac{RK_X}{Y}=\theta^2,
+ &v&\equiv\lim\frac{RK_R}{Y}
+ =\frac{\eta u}{d_\infty},
+ \label{eq:sub-uv}\\
+ i&=\frac{d_\infty(\alpha+u)+\eta u}
+ {d_\infty+\theta\eta},
+ &h&=\frac{\eta i}{d_\infty},
+ \label{eq:sub-ih}\\
+ \lim\frac{C}{Y}
+ &=\frac{\alpha\theta(1+\theta)}
+ {d_\infty+\theta\eta}>0,
+ \label{eq:sub-c}\\
+ \lim\frac{R}{z}&=\alpha+u+v,
+ &\lim\frac{qB}{K}&=\frac{v}{\eta h}.
+ \label{eq:sub-price-q}
+\end{align}
+Most importantly,
+\begin{equation}
+ \dot z\sim\theta h z^2.
+ \label{eq:z-Riccati}
+\end{equation}
+Therefore $T<\infty$ and $z$, $B$, $Y$, and $K$ diverge as $t\uparrow T$.
+\end{proposition}
+
+The local feedback can also be displayed directly. On the regular branch,
+\begin{equation}
+ \begin{pmatrix}
+  \dot g_B/g_B\\[2pt]
+  \dot g_K/g_K
+ \end{pmatrix}
+ \sim
+ \begin{pmatrix}
+  \eta-1&\eta\\
+  \theta&0
+ \end{pmatrix}
+ \begin{pmatrix}g_B\\ g_K\end{pmatrix}.
+ \label{eq:sub-feedback-matrix}
+\end{equation}
+Its determinant is $-\eta\theta<0$, so it has one positive eigenvalue for every $0<\eta<1$ and $0<\alpha<1$. Requiring compute changes the exponent with which capability raises output per unit of aggregate capital to $\theta=1-\alpha$, but does not eliminate the explosive direction.
+
+\begin{remark}[What Proposition~\ref{prop:substitute-singularity} does not prove]
+The path in Proposition~\ref{prop:substitute-singularity} is a pre-singular branch satisfying the decentralized necessary conditions before $T$. Because it is not defined on $[0,\infty)$ and cannot satisfy infinite-horizon transversality conditions, it is not an infinite-horizon equilibrium under Definition~\ref{def:equilibrium}. The proposition also does not exclude paths on which $s$ fails to converge, $BK_Y/H$ remains bounded, allocation shares oscillate or approach a boundary at nonstandard rates, or the limiting ratios in Definition~\ref{def:AI-branch} fail to exist.
+\end{remark}
+
+\subsection{Depreciation, concavity, and the role of capital}
+
+The three regimes answer the bottleneck question differently. With gross complements, capital assigned to inference and research grows more slowly than aggregate capital and its share vanishes. With unit elasticity, capital supports a BGP only below the threshold $\eta+\omega_X<1$. With gross substitutes, the accumulation constraint and depreciation are lower-order terms on a regular AI-dominated branch: $Y/K=z\to\infty$, while $\delta$ and the household discount parameters remain finite. They affect transition dynamics but disappear from the leading equations~\eqref{eq:sub-uv}--\eqref{eq:z-Riccati}.
+
+The scaling calculation makes the source of increasing returns explicit. In the AI-dominated limit, hold capital-allocation shares fixed and scale both capability and aggregate capital by a factor $m$. Equation~\eqref{eq:sub-production} implies that output scales by $m^{1+\theta}$, so the pair $(B,K)$ exhibits increasing returns even though production is constant returns in rival inputs for fixed $B$. If $B$ and research capital are scaled together, new capability production $\chi(BK_R)^\eta$ scales by $m^{2\eta}$. It has decreasing, constant, or increasing returns in the pair according as $\eta<1/2$, $\eta=1/2$, or $\eta>1/2$. The singularity result does not require $2\eta>1$: the production--accumulation feedback has a positive eigenvalue for every $\eta\in(0,1)$ on the regular substitute branch.
+
+Local first-order conditions are not automatically globally sufficient. Let
+\[
+ \pi^I(B;t)\equiv
+ \max_{X\geq0}\left\{p_X(X;t)X-\frac{R_tX}{B}\right\}.
+\]
+Whenever the optimizer $X^*(B;t)$ is differentiable, the envelope theorem gives
+\begin{equation}
+ \pi^I_{BB}(B;t)
+ =\frac{R_tX^*}{B^3}
+ \left(\frac{\partial\log X^*}{\partial\log B}-2\right).
+ \label{eq:inference-curvature}
+\end{equation}
+Thus the reduced inference return is concave in capability if the service response to capability is no larger than two. At unit elasticity this condition is $\beta\leq1/2$. In the AI-dominated substitute limit it becomes $\alpha\geq1/2$, because the response converges to $1/\alpha$. The research technology $(BK_R)^\eta$ is jointly concave in $(B,K_R)$ if $2\eta\leq1$. Hence, for $\sigma_{XL}>1$ and $\alpha<1/2$, a standard global-concavity proof necessarily fails in the very region where the singular feedback emerges. Failure of a sufficient condition is not proof that no optimum exists; it identifies the need for a separate global argument.

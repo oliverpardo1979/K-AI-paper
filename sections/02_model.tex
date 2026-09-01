@@ -9,24 +9,25 @@ Time is continuous. Population and labor-augmenting productivity are exogenous:
  \qquad N_0>0,\quad A_0>0.
  \label{eq:AN}
 \end{equation}
-Write $H_t\equiv A_tN_t$ and $g_H\equiv n+\gamma_A$.
+We maintain $n,\gamma_A\geq0$ and $g_H\equiv n+\gamma_A>0$.
+Write $H_t\equiv A_tN_t$, so effective labor grows at rate $g_H$.
 
 There is one reproducible capital stock $K_t$. At each date it is allocated among conventional production, inference, and AI research:
 \begin{equation}
- K_{Y,t}+K_{X,t}+K_{R,t}=K_t,qquad K_{j,t}\geq 0.
+ K_{Y,t}+K_{X,t}+K_{R,t}=K_t,\qquad K_{j,t}\geq 0.
  \label{eq:capital-allocation}
 \end{equation}
 The $K_j$ are dated allocations, not sector-specific state variables. Reallocation is instantaneous and all uses have the same depreciation rate $\delta\geq0$. This single constraint is what prevents double counting: a unit assigned to inference cannot simultaneously enter conventional production or research.
 
 AI capability $B_t$ turns the allocations $K_X$ and $K_R$ into two different services:
 \begin{equation}
- X_t=B_tK_{X,t},qquad S_{R,t}=B_tK_{R,t}.
+ X_t=B_tK_{X,t},\qquad S_{R,t}=B_tK_{R,t}.
  \label{eq:AI-services}
 \end{equation}
 Capability alone produces neither service. Autonomous research accumulates capability according to
 \begin{equation}
- \dot B_t=\chi(B_tK_{R,t})^\eta,qquad
- \chi>0,quad 0<\eta<1,quad B_0>0.
+ \dot B_t=\chi(B_tK_{R,t})^\eta,\qquad
+ \chi>0,\quad 0<\eta<1,\quad B_0>0.
  \label{eq:B-law}
 \end{equation}
 
@@ -48,7 +49,7 @@ For $\sigma_{XL}\neq1$, the weights are normalizations and need not sum to one. 
 
 Gross investment $I_t$ changes the common stock:
 \begin{equation}
- \dot K_t=I_t-\delta K_t,qquad K_0>0.
+ \dot K_t=I_t-\delta K_t,\qquad K_0>0.
  \label{eq:K-law-technology}
 \end{equation}
 The final good is the numeraire and may be consumed or invested.
@@ -64,7 +65,7 @@ The representative dynasty owns aggregate capital and all equity in the AI devel
 \end{equation}
 subject to
 \begin{equation}
- \dot K_t=r_tK_t+w_tN_t+\Pi_t-C_t,qquad K_0>0.
+ \dot K_t=r_tK_t+w_tN_t+\Pi_t-C_t,\qquad K_0>0.
  \label{eq:HH-budget}
 \end{equation}
 Here $r_t$ is the net return on capital, $w_t$ the wage per worker, and $\Pi_t$ developer profit rebated to the household. The current-value Hamiltonian gives
@@ -119,7 +120,9 @@ An interior monopoly solution requires $\varepsilon_t<1$.
 
 \subsection{The AI developer}
 
-The AI developer owns the non-rival stock $B_t$. It rents capital at the common gross rate $R_t$, uses $K_X=X/B$ to supply inference, and uses $K_R$ in research. Given the final producer's inverse demand $p_X(X;t)$, it chooses $(X_t,K_{R,t})$ to maximize
+The AI developer owns the non-rival stock $B_t$. It rents capital at the common gross rate $R_t$, uses $K_X=X/B$ to supply inference, and uses $K_R$ in research. Non-rivalry does not technologically require monopoly. It does, however, make competitive marginal-cost pricing of capability an incomplete financing mechanism: once created, an additional user does not deplete $B$. We use monopoly in the inference-service market to give the owner of $B$ a rent with which to value and finance research. Patent competition, public research, or a subsidy financed from general taxation would be alternative decentralizations.
+
+The developer competes in capital rental markets but acts as a Cournot supplier in the AI-service market: when choosing its dated service quantity, it takes $(K_Y,L)$ and the final producer's inverse demand $p_X(X;t)$ as given. It chooses $(X_t,K_{R,t})$ to maximize
 \begin{equation}
  \int_0^\infty
  \exp\!\left(-\int_0^t r_\tau\dd\tau\right)
@@ -180,7 +183,7 @@ Capital mobility implies one gross rental rate,
 \end{equation}
 Labor, AI services, and capital clear when
 \begin{equation}
- L_t=N_t,qquad X_t=B_tK_{X,t},qquad
+ L_t=N_t,\qquad X_t=B_tK_{X,t},\qquad
  K_t=K_{Y,t}+K_{X,t}+K_{R,t}.
  \label{eq:market-clearing}
 \end{equation}
@@ -219,8 +222,11 @@ This equation is the main link between capability, capital allocation, and facto
 
 \subsection{Equilibrium}
 
-\begin{definition}[Infinite-horizon equilibrium]
-Given parameters and initial conditions $(K_0,B_0,N_0,A_0)>0$, an infinite-horizon equilibrium is a collection of locally absolutely continuous state and co-state paths
+\begin{definition}[Equilibrium]
+\label{def:equilibrium}
+Fix parameters and initial conditions
+$(K_0,B_0,N_0,A_0)>0$.
+An infinite-horizon equilibrium contains locally absolutely continuous state and co-state paths
 \[
  \{K_t,B_t,N_t,A_t,q_t\}_{t\geq0},
 \]

@@ -1,9 +1,438 @@
 \section{Proofs and auxiliary results}
 \label{app:proofs}
 
-% Detailed proofs added with the regime propositions.
+\subsection{Static allocation}
+
+\begin{proof}[Proof of Lemma~\ref{lem:static}]
+Differentiate~\eqref{eq:firm-FOC-X} with respect to $X$, holding $(K_Y,L)$ fixed. The CES identities
+\[
+ \frac{\partial\log Y}{\partial\log X}=\theta s,
+ \qquad
+ \frac{\partial\log s}{\partial\log X}
+ =\frac{\sigma_{XL}-1}{\sigma_{XL}}(1-s)
+\]
+give
+\[
+ -\frac{\partial\log p_X}{\partial\log X}
+ =1-\theta s
+ -\frac{\sigma_{XL}-1}{\sigma_{XL}}(1-s)
+ =\frac{1-s}{\sigma_{XL}}+\alpha s.
+\]
+The monopoly first-order condition is marginal revenue equal to marginal cost, which gives~\eqref{eq:monopoly-FOC}. Multiplying that condition by $X=BK_X$ and using~\eqref{eq:firm-FOC-X} gives~\eqref{eq:payment-KX}; dividing it by~\eqref{eq:payment-KY} and using the CES bridge gives~\eqref{eq:static-master}.
+
+If $\sigma_{XL}<1$, $\varepsilon<1$ is equivalent to
+\[
+ 1-s+\alpha\sigma_{XL}s<\sigma_{XL},
+\]
+which reduces to $s>\bar s$ in~\eqref{eq:sbar}. If $\sigma_{XL}>1$, both endpoints $1/\sigma_{XL}$ and $\alpha$ of the affine function $\varepsilon(s)$ are below one, proving the second claim.
+
+For the last claim, rearrange~\eqref{eq:static-master} as
+\[
+ B\frac{K_Y}{H}
+ =\frac{\alpha}{\theta}
+ \frac{1}{s(1-\varepsilon)}
+ \left(\frac{\omega_L}{\omega_X}
+ \frac{s}{1-s}\right)^{
+ \frac{\sigma_{XL}}{\sigma_{XL}-1}}.
+\]
+For $\sigma_{XL}>1$, the right-hand side is bounded on every interval $s\in(0,1-\epsilon]$. At $s\downarrow0$, this follows because the power on $s$ is $\sigma_{XL}/(\sigma_{XL}-1)>1$, whereas the denominator contributes only one power of $s$. Therefore $BK_Y/H\to\infty$ requires $s\to1$.
+\end{proof}
+
+\subsection{The complementary regime}
+
+\begin{proof}[Proof of Proposition~\ref{prop:complements}]
+By regularity, $R/(Bp_X)\to0$. The monopoly condition therefore implies $1-\varepsilon\to0$. Since $\varepsilon(s)$ is affine and strictly decreasing when $\sigma_{XL}<1$, its unique unit root is $\bar s$ in~\eqref{eq:sbar}. The CES bridge then gives $X/H\to\bar x$, so $g_X\to g_H$.
+
+The inference rental share satisfies
+\[
+ u=\theta s(1-\varepsilon)\longrightarrow0.
+\]
+Hence $K_X/Y=u/R\to0$. Since $K_R/K_X\to\kappa\in(0,\infty)$, $K_R/Y\to0$ as well. The capital market and $RK_Y/Y=\alpha$ now imply
+\[
+ \frac{K}{Y}
+ =\frac{K_Y+K_X+K_R}{Y}
+ \longrightarrow\frac{\alpha}{\bar R},
+ \qquad \frac{K_Y}{K}\to1.
+\]
+The assumed positive limits relative to $H$ give
+$g_Y=g_K=g_C\to g_H$. The household Euler equation gives
+$\bar r=\rho+g_H-n=\rho+\gamma_A$, and therefore
+$\bar R=\rho+\gamma_A+\delta$.
+
+Because $X=BK_X$,
+\[
+ g_{K_X}\longrightarrow g_H-g_B.
+\]
+The positive finite limit of $K_R/K_X$ implies
+$g_{K_R}=g_{K_X}$ in the limit. Log-differentiating
+$\dot B=\chi(BK_R)^\eta$ gives
+\[
+ \frac{\dot g_B}{g_B}+g_B
+ =\eta(g_B+g_{K_R}).
+\]
+At a regular limiting growth rate,
+\[
+ (1-\eta)g_B=\eta g_{K_R}
+ =\eta(g_H-g_B),
+\]
+so $g_B=\eta g_H$ and
+$g_{K_X}=g_{K_R}=(1-\eta)g_H$.
+
+Next, the research payment identity implies
+\[
+ g_q+g_B=g_{K_R},
+\]
+because $R$, $\eta$, and the limiting $g_B$ are constant. Thus
+$g_q=(1-2\eta)g_H$. Define
+\[
+ T_t\equiv\frac{R_tX_t}{q_tB_t^2}
+ =\frac{R_tK_{X,t}}{q_tB_t}.
+\]
+The costate equation gives
+\[
+ \bar T
+ =\bar r-\eta^2g_H-(1-2\eta)g_H
+ =\rho+\gamma_A-(1-\eta)^2g_H.
+\]
+Moreover, $RK_R=q\eta g_BB$ implies
+\[
+ \frac{K_R}{K_X}
+ =\frac{\eta g_B}{T}
+ \longrightarrow
+ \frac{\eta^2g_H}
+ {\rho+\gamma_A-(1-\eta)^2g_H}.
+\]
+The denominator is positive because
+\[
+ \rho+\gamma_A-(1-\eta)^2(n+\gamma_A)
+ =\rho-(1-\eta)^2n+
+ [1-(1-\eta)^2]\gamma_A>0
+\]
+under the maintained restrictions.
+
+Aggregate feasibility yields
+\[
+ \frac{C}{Y}
+ =1-(g_K+\delta)\frac{K}{Y}
+ \longrightarrow
+ 1-\frac{\alpha(g_H+\delta)}{\bar R}.
+\]
+This is positive: $\rho>n$ implies
+\[
+ \bar R-\alpha(g_H+\delta)
+ =\rho-\alpha n+(1-\alpha)(\gamma_A+\delta)>0.
+\]
+Finally,
+\[
+ \frac{wN}{Y}=\theta(1-s)
+ \longrightarrow
+ \frac{\sigma_{XL}\theta^2}
+ {1-\alpha\sigma_{XL}},
+\qquad
+ \frac{p_XX}{Y}=\theta s
+ \longrightarrow
+ \frac{\theta(1-\sigma_{XL})}
+ {1-\alpha\sigma_{XL}}.
+\]
+Since both inference and research rental shares vanish, the stated results follow.
+\end{proof}
+
+\subsection{Unit elasticity}
+
+\begin{proof}[Proof of Proposition~\ref{prop:unit-BGP}]
+On a BGP, $Y$, the three capital allocations, aggregate capital, and consumption grow at a common rate $g$. Capability grows at rate $g_B$. Log-differentiating~\eqref{eq:unit-production} gives
+\[
+ g=\alpha g+\lambda g_H+\beta(g_B+g),
+\]
+or
+\begin{equation}
+ g=g_H+\frac{\beta}{\lambda}g_B.
+ \label{eq:app-unit-production-growth}
+\end{equation}
+The research law gives
+\[
+ g_B=\eta(g_B+g),
+\qquad\text{hence}\qquad
+ g_B=\frac{\eta}{1-\eta}g.
+\]
+Substitution into~\eqref{eq:app-unit-production-growth} yields
+\[
+ g=\frac{\lambda(1-\eta)}{
+ \lambda(1-\eta)-\beta\eta}g_H.
+\]
+The rate is positive and finite precisely when $\Delta>0$. Since
+$\lambda=\theta(1-\omega_X)$ and $\beta=\theta\omega_X$,
+this is equivalent to $\eta+\omega_X<1$.
+
+At unit elasticity, $s=\omega_X$ and
+$1-\varepsilon=\beta$. Thus
+$p_XX=\beta Y$ and $RK_X=\beta^2Y=uY$.
+The Euler equation gives $r=\rho+g-n$.
+Let $v=RK_R/Y$. The research payment identity gives
+\[
+ \frac{qB}{Y}=\frac{v}{\eta g_B},
+\]
+and therefore $g_q=g-g_B$. The inference-saving term in the costate equation is
+\[
+ \frac{RX}{qB^2}
+ =\frac{RK_X}{qB}
+ =\frac{u\eta g_B}{v}.
+\]
+Substituting into~\eqref{eq:q-growth} gives
+\[
+ g-g_B=r-\eta g_B-\frac{u\eta g_B}{v}.
+\]
+Using $r=\rho+g-n$ and $(1-\eta)g_B=\eta g$ yields
+\[
+ v=\frac{u\eta g_B}{\rho-n+\eta g}.
+\]
+
+The capital market gives $K/Y=(\alpha+u+v)/R$, and feasibility gives~\eqref{eq:unit-c}. To verify positivity, note that
+\[
+ v
+ <\frac{u\eta g_B}{\eta g}
+ =\frac{u\eta}{1-\eta}.
+\]
+The subcriticality restriction implies
+$\omega_X<1-\eta$. Because $\beta=\theta\omega_X<1-\eta$ and
+$u=\beta^2$, it follows that
+\[
+ u+v<\frac{u}{1-\eta}<\beta.
+\]
+Hence developer profit $\beta-u-v$ is positive. Also
+$\alpha+u+v<\alpha+\beta<1$, while
+$(g+\delta)/R<1$ because $R=\rho+g-n+\delta>g+\delta$.
+Therefore $c>0$.
+
+It remains to construct levels. The payment shares require
+$K_j=a_jY$. Substituting $K_Y=a_YY$ and $K_X=a_XY$ into production gives
+\[
+ Y=PHB^{\beta/\lambda}.
+\]
+Substituting $K_R=a_RY$ into the research law gives
+\[
+ Y=QB^{(1-\eta)/\eta}.
+\]
+Equating these expressions at date zero gives~\eqref{eq:unit-B0Y0}, because
+$d>0$. Equations~\eqref{eq:unit-K0} and~\eqref{eq:unit-C0q0} then impose the capital market, feasibility, and the research payment identity. The preceding growth-rate calculations verify every remaining equilibrium equation.
+
+For the household,
+\[
+ \e^{-\rho t}\frac{N_tK_t}{C_t}
+ \propto\e^{-(\rho-n)t}\longrightarrow0.
+\]
+For the developer, $qB$ grows at rate $g$ and
+$r=\rho+g-n$, so
+\[
+ \exp\left(-\int_0^t r\,\dd\tau\right)q_tB_t
+ \propto\e^{-(\rho-n)t}\longrightarrow0.
+\]
+The developer's discounted profit is finite for the same reason.
+
+For sufficiency, first optimize inference pointwise. With
+$p_XX$ proportional to $X^\beta$, optimized inference profit is proportional to
+$B^{\beta/(1-\beta)}$. It is concave in $B$ when $\beta\leq1/2$.
+The research technology $(BK_R)^\eta$ is jointly concave when
+$2\eta\leq1$. The reduced current-value Hamiltonian is then concave in the state and control, and the costate and transversality conditions are sufficient. The household and final-producer problems are concave. The constructed allocation is therefore an infinite-horizon equilibrium.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:unit-no-BGP}]
+Any positive finite-rate interior BGP must satisfy
+\[
+ \Delta g=\lambda(1-\eta)g_H.
+\]
+The right-hand side is strictly positive. If $\Delta=0$, the equality is impossible; if $\Delta<0$, it requires $g<0$, which contradicts
+$g_B=\eta g/(1-\eta)>0$ from $\dot B>0$.
+\end{proof}
+
+To obtain~\eqref{eq:unit-feedback-matrix}, let allocation and investment shares converge on a high-growth proportional branch. The research law implies
+\[
+ \frac{\dot g_B}{g_B}
+ =(\eta-1)g_B+\eta g_{K_R}
+ \simeq(\eta-1)g_B+\eta g_K.
+\]
+From~\eqref{eq:unit-production},
+\[
+ g_{Y/K}
+ =\lambda(g_H-g_K)+\beta g_B.
+\]
+Since $g_K$ is asymptotically proportional to $Y/K$, its own proportional change is asymptotic to $g_{Y/K}$. Dropping the finite exogenous term $\lambda g_H$ in the high-growth limit gives~\eqref{eq:unit-feedback-matrix}.
+
+\subsection{Gross substitutes}
+
+\begin{proof}[Proof of Proposition~\ref{prop:no-bounded-B}]
+Because $B$ is increasing and converges to $\bar B$, regularity implies
+$\dot B\to0$. Equation~\eqref{eq:B-law} then gives $K_R\to0$. Rearranging the research first-order condition,
+\[
+ q
+ =\frac{R(BK_R)^{1-\eta}}{\chi\eta B},
+\]
+shows that $q\to0$, because $R$ is bounded and $B$ is bounded away from zero.
+
+The regular interior static allocation has $K_X/H$ bounded away from zero. Hence $X=BK_X$ is bounded away from zero and grows with $H$. The forcing term
+\[
+ f_t\equiv\frac{R_tX_t}{B_t^2}
+\]
+is therefore bounded away from zero. Meanwhile
+$(r_t-\eta g_{B,t})q_t\to0$. The costate equation consequently implies
+$\dot q_t<-f_t/2<0$ eventually. A positive $q_t$ converging to zero cannot satisfy this inequality indefinitely: it crosses zero in finite time. This contradicts the positive research first-order condition and proves the result.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:substitute-singularity}]
+Lemma~\ref{lem:static} gives $s\to1$. Therefore
+$\varepsilon\to\alpha$ and
+\[
+ u=\theta s(1-\varepsilon)\longrightarrow\theta^2.
+\]
+The CES composite satisfies
+$Z\sim\omega_X^{1/\varrho}X$. With positive limiting capital-allocation shares,
+\[
+ Y\sim\omega_X^{\theta/\varrho}
+ K_Y^\alpha(BK_X)^\theta
+ =DB^\theta K
+\]
+for a finite $D>0$. Thus $z=Y/K\sim DB^\theta$ and
+\begin{equation}
+ \frac{\dot z}{z}\sim\theta g_B.
+ \label{eq:app-gz}
+\end{equation}
+
+Let $i=(Y-C)/Y$ and let its stated limit have the same symbol. Feasibility gives
+\[
+ g_K=iz-\delta\sim iz.
+\]
+The logarithmic derivatives of convergent allocation ratios are negligible under regularity, so $g_{K_R}\sim g_K$. From the research law,
+\[
+ \frac{\dot g_B}{g_B}
+ =(\eta-1)g_B+\eta g_{K_R}.
+\]
+Since $h=g_B/z$ converges to a positive constant, combine this equation with~\eqref{eq:app-gz}:
+\[
+ 0=(\eta-1)h+\eta i-\theta h.
+\]
+Therefore
+\[
+ h=\frac{\eta i}{1+\theta-\eta}
+ =\frac{\eta i}{d_\infty}.
+\]
+
+The capital market and the three rental shares imply
+\begin{equation}
+ \frac{R}{z}\longrightarrow a\equiv\alpha+u+v.
+ \label{eq:app-Rz}
+\end{equation}
+Because $C/Y$ has a positive regular limit,
+$g_C\sim g_Y\sim(i+\theta h)z$. The Euler equation, divided by $z$, gives
+\begin{equation}
+ a=i+\theta h.
+ \label{eq:app-Euler-leading}
+\end{equation}
+
+Let $m=\lim qB/K$. The research payment identity gives
+\[
+ v=\eta hm,\qquad m=\frac{v}{\eta h}.
+\]
+The inference-saving term in the costate equation satisfies
+\[
+ \frac{RX}{qB^2}
+ =\frac{RK_X}{qB}
+ \sim\frac{u}{m}z.
+\]
+Because $m$ is regular, $g_q+g_B-g_K=o(z)$. Divide that identity and the costate equation by $z$:
+\[
+ 0=a-\eta h-\frac{u}{m}+h-i.
+\]
+Use~\eqref{eq:app-Euler-leading} and $m=v/(\eta h)$ to obtain
+\[
+ d_\infty h-\frac{u\eta h}{v}=0,
+\qquad
+ v=\frac{\eta u}{d_\infty}.
+\]
+Equations~\eqref{eq:app-Rz} and~\eqref{eq:app-Euler-leading} now yield
+\[
+ \alpha+u+\frac{\eta u}{d_\infty}
+ =i\left(1+\frac{\theta\eta}{d_\infty}\right),
+\]
+which gives $i$ in~\eqref{eq:sub-ih}. Substituting
+$\alpha=1-\theta$ and $u=\theta^2$ gives
+\[
+ 1-i
+ =\frac{\alpha\theta(1+\theta)}
+ {d_\infty+\theta\eta}>0.
+\]
+
+Finally,~\eqref{eq:app-gz} and $g_B\sim hz$ imply
+\[
+ \dot z\sim\theta h z^2.
+\]
+There is therefore a date $t_1$ and a constant $a_1>0$ such that
+$\dot z\geq a_1z^2$ for $t\geq t_1$. Integration gives
+\[
+ \frac{1}{z_t}\leq
+ \frac{1}{z_{t_1}}-a_1(t-t_1),
+\]
+so the path cannot continue beyond a finite $T$. The asymptotic equalities
+$g_B\sim hz$ and $g_K\sim iz$, with $h,i>0$, then imply
+$B,K\to\infty$, and $Y=zK\to\infty$ as $t\uparrow T$.
+\end{proof}
+
+Equation~\eqref{eq:sub-feedback-matrix} follows from
+\[
+ \frac{\dot g_B}{g_B}
+ \sim(\eta-1)g_B+\eta g_K
+\]
+and
+\[
+ \frac{\dot g_K}{g_K}
+ \sim\frac{\dot z}{z}\sim\theta g_B.
+\]
+The determinant is negative, so the two eigenvalues have opposite signs.
 
 \section{Curvature and global optimality}
 \label{app:curvature}
 
-% Sufficient curvature conditions added with the completed theory.
+The final-production set is convex and the final production function is concave in the rival inputs $(K_Y,H,X)$ for every $\sigma_{XL}>0$. The household problem is concave. The nontrivial curvature issue lies in the developer's joint choice of inference and research.
+
+Let $X^*(B;t)$ solve the pointwise inference problem and define
+\[
+ \pi^I(B;t)=p_X(X^*;t)X^*-\frac{R_tX^*}{B}.
+\]
+The envelope theorem gives
+\[
+ \pi^I_B=\frac{R_tX^*}{B^2}.
+\]
+Differentiating once more gives
+\[
+ \pi^I_{BB}
+ =\frac{R_t}{B^2}\frac{\partial X^*}{\partial B}
+ -\frac{2R_tX^*}{B^3}
+ =\frac{R_tX^*}{B^3}
+ \left(\frac{\partial\log X^*}{\partial\log B}-2\right),
+\]
+which proves~\eqref{eq:inference-curvature}.
+
+At unit elasticity, gross revenue is proportional to $X^\beta$. Marginal-revenue pricing then gives
+$X^*\propto B^{1/(1-\beta)}$, so optimized profit is proportional to
+$B^{\beta/(1-\beta)}$. It is concave exactly when $\beta\leq1/2$.
+
+In the AI-dominated substitute region, gross revenue is asymptotically proportional to $X^\theta$. Hence
+$X^*\propto B^{1/(1-\theta)}=B^{1/\alpha}$.
+The reduced inference return is asymptotically concave only if
+$1/\alpha\leq2$, or $\alpha\geq1/2$.
+
+Finally, $(BK_R)^\eta=B^\eta K_R^\eta$ is a Cobb--Douglas function with total degree $2\eta$. It is jointly concave on the positive orthant if $2\eta\leq1$. Combining this condition with concavity of $\pi^I$ makes the developer's reduced Hamiltonian concave when the costate is positive. These are sufficient conditions. Outside them, the first-order system may still describe an optimum, but global sufficiency has to be established by another argument.
+
+\section{Research corners and omitted irregular paths}
+\label{app:corners}
+
+In a regular infinite-horizon equilibrium with positive inference demand, the developer's shadow value is positive. Solving the linear costate equation forward under the transversality condition gives, whenever the integral is finite,
+\[
+ q_t=\int_t^\infty
+ \exp\left\{-\int_t^s
+ [r_\tau-\eta g_{B,\tau}]\,\dd\tau\right\}
+ \frac{R_sX_s}{B_s^2}\,\dd s>0.
+\]
+Because $0<\eta<1$, the marginal contribution of $K_R$ to
+$\dot B$ diverges as $K_R\downarrow0$. Thus a finite-date zero-research corner is unavailable when $q_t>0$ and $R_t<\infty$.
+
+This observation does not close the global analysis for $\sigma_{XL}>1$. The asymptotic propositions do not cover a failure of the costate integral to converge, oscillatory shares, repeated approaches to a boundary, a collapse of $BK_Y/H$, or paths whose scaled derivatives remain large even though the underlying ratios converge. These cases are excluded from the definition of a regular branch and require separate methods.
